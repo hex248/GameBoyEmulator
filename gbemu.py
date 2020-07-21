@@ -18,7 +18,7 @@ class button:
         self.button.place(x=x, y=y, width=width, height=height)
 
 romlist = os.listdir('ROMs')
-romlist2 = os.listdir('ROMs')
+romlist2 = romlist
 
 def gamerun(rom):
     pyboy = PyBoy(f"ROMs/{rom}")
@@ -32,7 +32,7 @@ for i, rom in enumerate(romlist):
         romlist[i] = rom[:-4]
     if rom.endswith(".gb"):
         romlist[i] = rom[:-3]
-    if rom.endswith(".state"):
+    else:
         romlist.remove(rom)
 
 if len(romlist) < 16:
